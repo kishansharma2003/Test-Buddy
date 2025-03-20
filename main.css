@@ -1,0 +1,379 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Digital-7';
+    background-color: #101820;
+    color: #FEE715;
+}
+
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 90%;
+}
+
+.wrapper {
+    position: relative;
+}
+
+h3 {
+    margin: 0;
+    position: absolute;
+    top: -40px;
+    left: 5px;
+    font-size: 25px;
+    text-transform: none;
+    font-family: monospace;
+}
+
+
+
+.box {
+    width: 750px;
+    height: 450px;
+    border: 2px solid #FEE715;
+    margin-bottom: 50px;
+}
+
+.MainTitle {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.color {
+    width: 100px;
+    height: 70px;
+    border: 2px solid whitesmoke;
+    margin: 30px;
+    margin-left: 48px;
+    font-size: 20px;
+    margin-top: 100px;
+
+}
+
+.red {
+    background-color: red;
+    color: white;
+
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.green {
+    background-color: green;
+    color: black;
+}
+
+.yellow {
+    background-color: yellow;
+    color: black;
+
+}
+
+p {
+    font-family: monospace;
+    font-size: 30px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+
+
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FEE715;
+    background-color: #101820;
+    /* Adds space between elements */
+}
+
+
+.box3 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FEE715;
+    background-color: #101820;
+    /* Adds space between elements */
+
+}
+
+.box4 {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FEE715;
+    background-color: #101820;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.box4 p {
+    font-size: 25px;
+}
+
+.box4 input {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: row;
+    /* Keep radio buttons and checkboxes in a row */
+    gap: 30px;
+    /* Add spacing */
+    margin-bottom: 10px;
+    /* Add space between radio and checkboxes */
+}
+
+
+
+
+.box2 input {
+    width: 300px;
+    padding: 15px;
+    margin: 30px;
+    margin: 5px 0;
+    border: 1px solid #FEE715;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.box2 button {
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+    border: none;
+    background-color: #FEE715;
+    color: #101820;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box2 button:hover {
+    background-color: #d4c200;
+}
+
+#result1 {
+    margin-top: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+select {
+    width: 50%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+#multiSelect {
+    height: 100px;
+}
+
+label {
+    font-family: monospace;
+    font-size: 20px;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#myDate {
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/*   css for box 7 */
+.box7 {
+    font-family: monospace;
+    width: 750px;
+    height: 450px;
+    overflow-y: auto;
+}
+
+.box7 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box7 th,
+.box7 td {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #aaa;
+    /* Line between columns */
+}
+
+.box7 th:last-child,
+.box7 td:last-child {
+    border-right: none;
+    /* Removes border from the last column */
+}
+
+.box7 thead {
+    position: sticky;
+    top: 0;
+    background-color: #07eaff;
+    color: black;
+    font-weight: bold;
+}
+
+.box7 tbody tr:hover {
+    background-color: #f1f1f112;
+}
+
+/*  ***************************************** */
+
+.box8 {
+    padding: 20px;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color: #ff4757;
+}
+
+/* Red */
+.btn2 {
+    background-color: #1e90ff;
+}
+
+/* Blue */
+.btn3 {
+    background-color: #2ed573;
+}
+
+/* Green */
+
+.context-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.context-menu ul li:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+.boxiframe {
+    
+    
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#biframe1,
+#biframe2 {
+    width: 45%;
+    height: 80%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    
+}
+
+.box10{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.box20 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f84e4e;
+}
+
+.box20 input {
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.box20 button {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.box20 button:hover {
+    background: #0056b3;
+}

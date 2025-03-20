@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .cart-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        #cart-count {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 100px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .add-to-cart {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cart-popup,
+        .order-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-popup p {
+            font-size: 18px;
+            color: green;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .cart-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 400px; /* Set a max height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Cart Icon -->
+    <div class="cart-container">
+        <span id="cart-count">0</span>
+        <button id="cart-btn">🛒 Cart</button>
+    </div>
+
+    <!-- Product Listing -->
+    <div class="product-container">
+        <div class="product" data-id="1" data-name="Laptop" data-price="50000">
+            <h4>Laptop</h4>
+            <p>₹50,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="2" data-name="Smartphone" data-price="25000">
+            <h4>Smartphone</h4>
+            <p>₹25,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="3" data-name="Headphones" data-price="3000">
+            <h4>Headphones</h4>
+            <p>₹3,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="4" data-name="Smartwatch" data-price="5000">
+            <h4>Smartwatch</h4>
+            <p>₹5,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="5" data-name="Tablet" data-price="20000">
+            <h4>Tablet</h4>
+            <p>₹20,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="6" data-name="Gaming Console" data-price="45000">
+            <h4>Gaming Console</h4>
+            <p>₹45,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="7" data-name="Wireless Earbuds" data-price="7000">
+            <h4>Wireless Earbuds</h4>
+            <p>₹7,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="8" data-name="Mechanical Keyboard" data-price="6000">
+            <h4>Mechanical Keyboard</h4>
+            <p>₹6,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="9" data-name="Gaming Mouse" data-price="4000">
+            <h4>Gaming Mouse</h4>
+            <p>₹4,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="10" data-name="Monitor" data-price="18000">
+            <h4>Monitor</h4>
+            <p>₹18,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="11" data-name="External Hard Drive" data-price="9000">
+            <h4>External Hard Drive</h4>
+            <p>₹9,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="12" data-name="Power Bank" data-price="3000">
+            <h4>Power Bank</h4>
+            <p>₹3,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="13" data-name="Bluetooth Speaker" data-price="5500">
+            <h4>Bluetooth Speaker</h4>
+            <p>₹5,500</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="14" data-name="Smart TV" data-price="55000">
+            <h4>Smart TV</h4>
+            <p>₹55,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="15" data-name="VR Headset" data-price="35000">
+            <h4>VR Headset</h4>
+            <p>₹35,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="16" data-name="Graphics Card" data-price="60000">
+            <h4>Graphics Card</h4>
+            <p>₹60,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="17" data-name="Router" data-price="4500">
+            <h4>Router</h4>
+            <p>₹4,500</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="18" data-name="Smart Home Kit" data-price="15000">
+            <h4>Smart Home Kit</h4>
+            <p>₹15,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="19" data-name="Projector" data-price="25000">
+            <h4>Projector</h4>
+            <p>₹25,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="20" data-name="Drone" data-price="80000">
+            <h4>Drone</h4>
+            <p>₹80,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <!-- Cart Section (Initially Hidden) -->
+    <div class="cart-popup" id="cart-popup">
+        <h3>Shopping Cart</h3>
+        <div id="cart-items"></div>
+        <button id="place-order">Place Order</button>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <!-- Order Confirmation Popup -->
+    <div class="order-popup" id="order-popup">
+        <p>✅ Your order has been placed successfully!</p>
+        <button id="close-order-popup">OK</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let cart = [];
+            const cartBtn = document.getElementById("cart-btn");
+            const cartPopup = document.getElementById("cart-popup");
+            const cartCount = document.getElementById("cart-count");
+            const cartItemsContainer = document.getElementById("cart-items");
+            const placeOrderBtn = document.getElementById("place-order");
+            const orderPopup = document.getElementById("order-popup");
+            const closeOrderPopupBtn = document.getElementById("close-order-popup");
+            const closeCartBtn = document.getElementById("close-cart");
+
+            // Add to Cart Function
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function () {
+                    const product = this.parentElement;
+                    const productId = product.getAttribute("data-id");
+                    const productName = product.getAttribute("data-name");
+                    const productPrice = parseInt(product.getAttribute("data-price"));
+
+                    let existingProduct = cart.find(item => item.id === productId);
+                    if (!existingProduct) {
+                        cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+                        this.disabled = true; // Disable the button after clicking
+                        this.innerText = "Added"; // Change button text
+                        this.style.backgroundColor = "green"; // Change background color to green
+
+                    }
+
+                    updateCartCount();
+                });
+            });
+
+            // Update Cart Counter
+            function updateCartCount() {
+                let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+            }
+
+            // Show Cart Popup
+            cartBtn.addEventListener("click", () => {
+                updateCartPopup();
+                cartPopup.style.display = "block";
+            });
+
+            // Close Cart Popup
+            closeCartBtn.addEventListener("click", () => {
+                cartPopup.style.display = "none";
+            });
+
+            // Update Cart Popup
+            function updateCartPopup() {
+                cartItemsContainer.innerHTML = "";
+                cart.forEach((item, index) => {
+                    let itemDiv = document.createElement("div");
+                    itemDiv.innerHTML = `
+                        <p>${item.name} - ₹${item.price} x ${item.quantity}</p>
+                        <button class="increase" data-index="${index}">+</button>
+                        <button class="decrease" data-index="${index}">-</button>
+                        <button class="remove" data-index="${index}">❌</button>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                });
+
+                document.querySelectorAll(".increase").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        cart[this.getAttribute("data-index")].quantity++;
+                        updateCartPopup();
+                        updateCartCount();
+                    });
+                });
+
+                document.querySelectorAll(".decrease").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        let index = this.getAttribute("data-index");
+                        if (cart[index].quantity > 1) {
+                            cart[index].quantity--;
+                        } else {
+                            cart.splice(index, 1);
+                        }
+                        updateCartPopup();
+                        updateCartCount();
+                    });
+                });
+
+                document.querySelectorAll(".remove").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        cart.splice(this.getAttribute("data-index"), 1);
+                        updateCartPopup();
+                        updateCartCount();
+                    });
+                });
+            }
+
+            // Place Order
+            placeOrderBtn.addEventListener("click", () => {
+                cart = [];
+                updateCartCount();
+                cartPopup.style.display = "none";
+                orderPopup.style.display = "block";
+            });
+
+            // Close Order Popup
+            closeOrderPopupBtn.addEventListener("click", () => {
+                orderPopup.style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

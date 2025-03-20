@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Excel</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        input{
+            width: 180px;
+            height: 30px;
+        }
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            color: whitesmoke;
+
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: whitesmoke;
+
+        }
+
+        th, td {
+            border: 1px solid white;
+            color: whitesmoke;
+            padding: 8px;
+            text-align: left;
+            width: 180px;
+            height: 5px;
+            font-family: monospace;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="contact" placeholder="Enter Contact No">
+        </div>
+        <button onclick="addEntry()">Add</button>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Person Name</th>
+                    <th>Contact No</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function addEntry() {
+            let name = document.getElementById("name").value;
+            let contact = document.getElementById("contact").value;
+            
+            if (name === "" || contact === "") {
+                alert("Please fill out both fields");
+                return;
+            }
+            
+            let table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+            let newRow = table.insertRow();
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            cell1.textContent = name;
+            cell2.textContent = contact;
+            
+            document.getElementById("name").value = "";
+            document.getElementById("contact").value = "";
+        }
+    </script>
+</body>
+</html>

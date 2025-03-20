@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestBuddy</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="temp.js"></script>
+    
+</head>
+
+<body>
+    <h1 class="MainTitle">Welcome to TestBuddy</h1>
+
+    <div id="container">
+
+
+        <div class="wrapper">
+            <h3>Working with Clicks!!!</h3>
+            <div class="box">
+                <button class="color red" onclick="updateText('Red')">Red</button>
+                <button class="color yellow" onclick="updateText('Yellow')">Yellow</button>
+                <button class="color blue" onclick="updateText('Blue')">Blue</button>
+                <button class="color green" onclick="updateText('Green')">Green</button>
+                <br><br><br>
+                <p id="result">Click On Any Button</p>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <h3>Working With SendKeys </h3>
+            <div class="box box2">
+                <input type="text" placeholder="Enter Username" id="UserName"> <br>
+                <input type="password" placeholder="Enter password" id="PassWord"><br>
+                <button onclick="Validate_User(UserName, PassWord)">Login</button>
+                <p id="result1">UserName:- Kishan27 , Password= Welcome@2025</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="wrapper">
+            <h3>Working With Select</h3>
+            <div class="box box3">
+                <label for="singleSelect">Choose an option:</label>
+                <select id="singleSelect">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="multiSelect">Choose multiple options:</label>
+                <select id="multiSelect" multiple>
+                    <option value="Option A">India</option>
+                    <option value="Option B">China</option>
+                    <option value="Option C">USA</option>
+                    <option value="Option D">Russia</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h3>Working With Datepicker</h3>
+            <div class="box box3">
+                    <iframe src="date.html" id="dateiframe" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        
+
+        <div class="wrapper">
+            <h3>Check Box and Radio</h3>
+            <div class="box box4">
+
+                <p>Radio Button ( Single Select )</p>
+                <div class="radio-group">
+                    <input type="radio" class="option" name="choice" id="option1"> Radio 1
+                    <input type="radio" class="option" name="choice" id="option2"> Radio 2
+                    <input type="radio" class="option" name="choice" id="option3"> Radio 3
+                    <input type="radio" class="option" name="choice" id="option4"> Radio 4
+                </div>
+
+                <p>Checkbox ( Multiple Select )</p>
+                <div class="checkbox-group">
+                    <input type="checkbox" class="check" id="check1"  value="India"> India
+                    <input type="checkbox" class="check" id="check2" value="Thailand"> Thailand
+                    <input type="checkbox" class="check" id="check3" value="Russia"> Russia
+                    <input type="checkbox" class="check" id="check4" value="Bali"> Bali
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Drag and Drop & Slider</h3>
+            <div class="box box5">
+                <iframe src="draganddrop.html" id="draganddrop" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>File Upload and Download</h3>
+            <div class="box box6">
+                <iframe src="filedownload.html" ` frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Hover and Switch tab's and Windows</h3>
+            <div class="box box6">
+                <iframe src="switchhover.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Working With WebTables</h3>
+            <div class="box box7">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Contact No</th>
+                            <th>City</th>
+                            <th>Degree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Amit Sharma</td>
+                            <td>9876543210</td>
+                            <td>Pune</td>
+                            <td>B.Tech</td>
+                        </tr>
+                        <tr>
+                            <td>Neha Verma</td>
+                            <td>8765432109</td>
+                            <td>Mumbai</td>
+                            <td>MCA</td>
+                        </tr>
+                        <tr>
+                            <td>Rahul Singh</td>
+                            <td>7654321098</td>
+                            <td>Pune</td>
+                            <td>B.Sc</td>
+                        </tr>
+                        <tr>
+                            <td>Pooja Mehta</td>
+                            <td>6543210987</td>
+                            <td>Bangalore</td>
+                            <td>BBA</td>
+                        </tr>
+                        <tr>
+                            <td>Vikram Das</td>
+                            <td>5432109876</td>
+                            <td>Kolkata</td>
+                            <td>MBA</td>
+                        </tr>
+                        <tr>
+                            <td>Simran Kaur</td>
+                            <td>4321098765</td>
+                            <td>Pune</td>
+                            <td>B.Com</td>
+                        </tr>
+                        <tr>
+                            <td>Arjun Nair</td>
+                            <td>3210987654</td>
+                            <td>Pune</td>
+                            <td>BCA</td>
+                        </tr>
+                        <tr>
+                            <td>Ritika Roy</td>
+                            <td>2109876543</td>
+                            <td>Hyderabad</td>
+                            <td>BA</td>
+                        </tr>
+                        <tr>
+                            <td>Karan Patel</td>
+                            <td>1098765432</td>
+                            <td>Ahmedabad</td>
+                            <td>B.Tech</td>
+                        </tr>
+                        <tr>
+                            <td>Sneha Yadav</td>
+                            <td>9988776655</td>
+                            <td>Jaipur</td>
+                            <td>M.Sc</td>
+                        </tr>
+                        <tr>
+                            <td>Pooja Mehta</td>
+                            <td>6543210987</td>
+                            <td>Bangalore</td>
+                            <td>BBA</td>
+                        </tr>
+                        <tr>
+                            <td>Simran Kaur</td>
+                            <td>4321098765</td>
+                            <td>Chandigarh</td>
+                            <td>B.Com</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Working With Clicks</h3>
+            <div class="box box8">
+                <button id="singleClickBtn" class="btn btn1">Click Me</button>
+                <button id="doubleClickBtn" class="btn btn2">Double Click Me</button>
+                <button id="rightClickBtn" class="btn btn3">Right Click Me</button>
+
+                <!-- Custom Context Menu -->
+                <div id="contextMenu" class="context-menu">
+                    <ul>
+                        <li>Option 1</li>
+                        <li>Option 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Single click event
+            document.getElementById("singleClickBtn").addEventListener("click", function () {
+                alert("Single Click Button Pressed!");
+            });
+
+            // Double click event
+            document.getElementById("doubleClickBtn").addEventListener("dblclick", function () {
+                alert("Double Click Button Pressed!");
+            });
+
+            // Right click event
+            document.getElementById("rightClickBtn").addEventListener("contextmenu", function (event) {
+                event.preventDefault(); // Prevent the default right-click menu
+                let menu = document.getElementById("contextMenu");
+                menu.style.display = "block";
+                menu.style.left = event.pageX + "px";
+                menu.style.top = event.pageY + "px";
+            });
+
+            // Hide context menu when clicking anywhere else
+            document.addEventListener("click", function () {
+                document.getElementById("contextMenu").style.display = "none";
+            });
+        </script>
+
+        <!-- scroll -->
+        <div class="wrapper">
+            <h3>Working With Scroll</h3>
+            <div class="box">
+                <iframe src="scrolls.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h3>Iframe Nested</h3>
+            <div class="box box10">
+                <div id="biframe1" >
+                    <iframe src="Temp1.html" frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <h3>Iframe Multiple</h3>
+            <div class="box boxiframe">
+                <div id="biframe1">
+                    <iframe src="biframe1.html" frameborder="0"></iframe>
+                </div>
+
+
+                <div id="biframe2">
+                    <iframe src="biframe2.html" frameborder="0"></iframe>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Iframe Nested and Multiple</h3>
+            <div class="box box10">
+                <div id="biframe1" >
+                    <iframe src="Temp1.html"  id="IFM1" frameborder="0">
+                    </iframe>
+                </div>
+
+                <div id="biframe1" >
+                    <iframe src="Temp1.html" frameborder="0">
+                    </iframe>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h3>Working With PopUps</h3>
+            <div class="box">
+                <iframe src="popups.html" frameborder="0"></iframe>  
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h3>Working With Excel</h3>
+            <div class="box">
+                <iframe src="practiceexcel.html" frameborder="0"></iframe>  
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h3>Try to fill the form (Can use FindElements Method once)</h3>
+            <div class="box  box20">
+                
+                <input type="text" id="InputTG1" placeholder="Enter Name">
+                <input type="text" id="InputTG1" placeholder="Enter LName">
+                <input type="number" id="InputTG1" minlength="10" maxlength="10"placeholder="Enter Contact" >
+                <button onclick="called()">Submit </button>
+                
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <h3>A Small Ecommerce Application</h3>
+            <div class="box">
+                <iframe src="Ecommerce.html" frameborder="0"></iframe>  
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
