@@ -41,23 +41,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function called() {
-    let inputs = document.querySelectorAll(".InputTG1"); // Select by class
-
-    let name = inputs[0].value.trim();
-    let lname = inputs[1].value.trim();
-    let contact = inputs[2].value.trim();
-
-    // Validation using placeholder
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.trim() === "") {
-            alert(`Please enter ${inputs[i].placeholder}`);
-            return; // Stop execution if any field is empty
-        }
-    }
-
-    // Displaying values in an alert
-    alert(`Name: ${name}\nLast Name: ${lname}\nContact: ${contact}`);
-
+    // Using querySelectorAll to get all input elements with the same ID
+    let inputs = document.querySelectorAll("#InputTG1");
+    
+    // Extracting values from inputs
+    let name = inputs[0].value;
+    let lname = inputs[1].value;
+    let contact = inputs[2].value;
+    
+    // Displaying values in an alert popup
+    alert(Name: ${name}\nLast Name: ${lname}\nContact: ${contact});
+    
     // Clearing the input fields
     inputs.forEach(input => input.value = "");
 }
