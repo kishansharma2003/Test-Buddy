@@ -50,7 +50,7 @@ function called() {
     let contact = inputs[2].value;
     
     // Displaying values in an alert popup
-    alert(Name: ${name}\nLast Name: ${lname}\nContact: ${contact});
+    alert(`Name: ${name}\nLast Name: ${lname}\nContact: ${contact}`);
     
     // Clearing the input fields
     inputs.forEach(input => input.value = "");
